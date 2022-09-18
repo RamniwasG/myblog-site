@@ -1,0 +1,122 @@
+<!-- To enter in Mongo interective shell -->
+
+<!-- Run below command on your django project root directory -->
+python3 manage.py shell
+
+<!-- once you entered in interective mode -->
+<!-- Start using it using Model class like in my case it is Post -->
+from blogs.models import Post
+>>> post_data = Post(title="title 1", content="this is my first content")
+>>> Post.object.all()
+
+>>> quit()
+vinaysingh@Vinays-MacBook-Pro my_site % python3 manage.py migrate
+
+>>> from blogs.models import Post
+>>> post_data = Post(slug="abc",title="title 1", image="", auther="raman", excerpt="", content="this is my first content")
+
+>>> Post.save(post_data)
+>>> Post.objects.all()
+<QuerySet [<Post: title 1>, <Post: title 1>, <Post: title 1>]>
+
+>>> from blogs.models import Post
+>>> Post.objects.all()[0].title
+'title 1'
+>>> Post.objects.all()[0].title
+'title 1'
+>>> post_data = Post(slug="hike-in-the-mountains",title="Mountain Hiking", image="mountains.jpg", auther="raman", excerpt="There's nothing like the views you get when hiking in the mountains! And I wasn't even prepared for what happened whilst I was enjoying the view!", content="this is my demo content")
+>>> post_data.save()
+>>> data = Post.objects.all()[0]
+>>> data.title
+'title 1'
+>>> data = Post.objects.all()[1]
+>>> data.title
+'title 1'
+>>> data2 = Post.objects.all()[1]
+>>> data2.title
+'title 1'
+>>> data2 = Post.objects.all()[0].title
+>>> Post.objects.all()[0].title
+'title 1'
+>>> Post.objects.all()[1].title
+'title 1'
+>>> Post.objects.all()[2].title
+'title 1'
+>>> Post.objects.all()
+<QuerySet [<Post: title 1>, <Post: title 1>, <Post: title 1>, <Post: Mountain Hiking>]>
+>>> Post.save(post_data)
+>>> Post.objects.all()[0].title
+'title 1'
+>>> Post.objects.all()[2]
+<Post: title 1>
+>>> Post.objects.all()[4]
+<Post: title 2>
+>>> data = Post.objects.all()[4]
+>>> data.title
+'title 2'
+>>> data.auther
+'raman'
+
+>>> data = Post.objects.all()[2]
+>>> data.delete()
+(1, {'blogs.Post': 1})
+>>> data = Post.objects.all()[3]
+>>> data.delete()
+(1, {'blogs.Post': 1})
+>>> data = Post.objects.all()[1]
+>>> data.title
+'title 1'
+>>> data.delete()
+(1, {'blogs.Post': 1})
+>>> data = Post.objects.all()[0]
+>>> data.title
+'title 1'
+>>> data = Post.objects.all()[1]
+>>> data.title
+'Mountain Hiking'
+>>> data = Post.objects.all()[0]
+>>> data.delete()
+(1, {'blogs.Post': 1})
+>>> data = Post.objects.all()[0]
+>>> data.title
+'Mountain Hiking'
+
+>>> data = Post.objects.all()
+>>> Post.objects.all()
+<QuerySet [<Post: Mountain Hiking>]>
+
+<!-- showing all objects -->
+>>> Post.objects.all()
+<QuerySet [<Post: Mountain Hiking>, <Post: title 2>]>
+
+<!-- Filters -->
+>>> Post.objects.filter(title="title 2")
+<QuerySet [<Post: title 2>]>
+>>> Post.objects.filter(title="raman")
+<QuerySet []>
+>>> Post.objects.filter(auther="raman")
+<QuerySet [<Post: Mountain Hiking>, <Post: title 2>]>
+>>> Post.objects.filter(title="Mountain Hiking")
+<QuerySet [<Post: Mountain Hiking>]>
+>>> Post.objects.filter(title="Mountain hiking")
+<QuerySet []>
+>>> Post.objects.filter(title="Mountain Hiking")
+<QuerySet [<Post: Mountain Hiking>]>
+>>> Post.objects.filter(title__icontains="Mountain Hiking")
+<QuerySet [<Post: Mountain Hiking>]>
+>>> Post.objects.filter(title__icontains="Mountain hiking")
+<QuerySet [<Post: Mountain Hiking>]>
+>>> Post.objects.filter(title="title 2") 
+<QuerySet [<Post: title 2>]>
+
+<!-- Single filter -->
+>>> filtered_data = Post.objects.filter(title="title 2") <!-- >>> this is still not touched database -->
+>>> print(filtered_data)  <!-- >>> here it is touched database -->
+
+<!-- multiple filter options with OR operations -->
+>>> Post.objects.filter(Q(title="title 2") | Q(auther="raman"))
+<QuerySet [<Post: Mountain Hiking>, <Post: title 2>]>
+
+>>>  Post.objects.create(slug="into-the-woods", title="Nature At Its Best", image="woods.jpg", auther="Ramniwas", excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+
+>>> 

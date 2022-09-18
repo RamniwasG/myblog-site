@@ -1,6 +1,7 @@
 from http.client import HTTPResponse
 from django.shortcuts import render
 from datetime import date
+from .models import Post
 
 all_posts = [
     {
@@ -70,6 +71,17 @@ all_posts = [
 
 def getdate(post):
     return post['date']
+
+# since Model doesn't have date field so implemented index function 
+# else starting_page function is working one
+def index(request):
+    # post_lists = json.dumps(Post.objects.all())
+    # all_fields = Post._meta.get_fields()
+    # print(all_fields)
+    # print(post_lists)
+    return render(request, 'blogs/index.html', {
+        "posts": all_posts
+    })
 
 def staring_page(request):
     sorted_posts = sorted(all_posts, key=getdate)
