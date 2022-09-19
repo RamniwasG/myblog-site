@@ -117,6 +117,6 @@ vinaysingh@Vinays-MacBook-Pro my_site % python3 manage.py migrate
 >>> Post.objects.filter(Q(title="title 2") | Q(auther="raman"))
 <QuerySet [<Post: Mountain Hiking>, <Post: title 2>]>
 
->>>  Post.objects.create(slug="into-the-woods", title="Nature At Its Best", image="woods.jpg", auther="Ramniwas", excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+>>>  Post.objects.create(slug="relaxing-music-listening", title="Listening song a fun!", image="woods.jpg", auther="Ramniwas", updated_on=date.today ,excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
 
 >>> 

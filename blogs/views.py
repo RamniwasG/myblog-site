@@ -84,17 +84,17 @@ def index(request):
     })
 
 def staring_page(request):
-    sorted_posts = sorted(all_posts, key=getdate)
-    latest_posts = sorted_posts[-3:]
+    # sorted_posts = sorted(all_posts, key=getdate)
+    # latest_posts = sorted_posts[-3:]
     return render(request, 'blogs/index.html', {
-        "posts": latest_posts
+        "posts": Post.objects.all()
     })
 
 def posts(request):
-    sorted_posts = sorted(all_posts, key=getdate)
-    latest_posts = sorted_posts[-3:]
+    # sorted_posts = sorted(all_posts, key=getdate)
+    # latest_posts = sorted_posts[-3:]
     return render(request, 'blogs/all-posts.html', {
-        "posts": latest_posts
+        "posts": Post.objects.all()
     })
 
 def post_details(request, slug):
