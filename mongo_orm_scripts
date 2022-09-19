@@ -1,3 +1,6 @@
+<!-- Below commands are used to work with interective shell on 
+mongo ORM -->
+
 <!-- To enter in Mongo interective shell -->
 
 <!-- Run below command on your django project root directory -->
@@ -126,6 +129,6 @@ vinaysingh@Vinays-MacBook-Pro my_site % python3 manage.py migrate
 
 >>> Post.objects.create(slug="programming-is-fun", title="Programming Is Great!", image="coding.jpg", auther=rgupta, updated_on=date ,excerpt="Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
 
->>> Post.objects.create(slug="into-the-woods", title="Nature At Its Best", image="woods.jpg", auther=rgupta, updated_on=date ,excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+>>> Post.objects.create(slug="into-the-woods", title="Nature At Its Best", image="woods.jpg", auther=rgupta, updated_on=date ,excerpt="w", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
 
 <!-- End here -->
