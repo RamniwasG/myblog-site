@@ -5,6 +5,27 @@ from .models import Post
 
 all_posts = [
     {
+        "slug": "listening-song-a-fun",
+        "image": "listening_song.jpg",
+        "author": "Ramniwas",
+        "date": date(2021, 7, 21),
+        "title": "Listening song is fun",
+        "excerpt": "Songs are amazing!, The amount of relaxation I get when i listen this incredible songs!",
+        "content": """
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+        """
+    },
+    {
         "slug": "hike-in-the-mountains",
         "image": "mountains.jpg",
         "author": "Ramniwas",
@@ -84,17 +105,18 @@ def index(request):
     })
 
 def staring_page(request):
-    # sorted_posts = sorted(all_posts, key=getdate)
-    # latest_posts = sorted_posts[-3:]
+    # list_all_posts = Post.objects.all().order_by('-updated_on')
+    sorted_posts = sorted(all_posts, key=getdate)
+    latest_posts = sorted_posts[-3:]
     return render(request, 'blogs/index.html', {
-        "posts": Post.objects.all()
+        "posts": latest_posts
     })
 
 def posts(request):
-    # sorted_posts = sorted(all_posts, key=getdate)
-    # latest_posts = sorted_posts[-3:]
+    sorted_posts = sorted(all_posts, key=getdate)
+    latest_posts = sorted_posts[-3:]
     return render(request, 'blogs/all-posts.html', {
-        "posts": Post.objects.all()
+        "posts": latest_posts # Post.objects.all()
     })
 
 def post_details(request, slug):

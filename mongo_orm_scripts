@@ -117,6 +117,15 @@ vinaysingh@Vinays-MacBook-Pro my_site % python3 manage.py migrate
 >>> Post.objects.filter(Q(title="title 2") | Q(auther="raman"))
 <QuerySet [<Post: Mountain Hiking>, <Post: title 2>]>
 
->>>  Post.objects.create(slug="relaxing-music-listening", title="Listening song a fun!", image="woods.jpg", auther="Ramniwas", updated_on=date.today ,excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
 
->>> 
+<!-- INSERT/CREATE Mongo Objects -->
+
+>>> Post.objects.create(slug="listening-song-a-fun", title="Listening song a fun", image="listening_song.jpg", auther=rgupta, updated_on=date ,excerpt="Songs are amazing!, The amount of relaxation I get when i listen this incredible songs!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+
+>>> Post.objects.create(slug="hike-in-the-mountains", title="Mountains Hiking", image="mountains.jpg", auther=rgupta, updated_on=date ,excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+
+>>> Post.objects.create(slug="programming-is-fun", title="Programming Is Great!", image="coding.jpg", auther=rgupta, updated_on=date ,excerpt="Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+
+>>> Post.objects.create(slug="into-the-woods", title="Nature At Its Best", image="woods.jpg", auther=rgupta, updated_on=date ,excerpt="Nature is amazing! The amount of inspiration I get when walking in nature is incredible!", content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis aperiam est praesentium, quos iste consequuntur omnis exercitationem quam velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio")
+
+<!-- End here -->
