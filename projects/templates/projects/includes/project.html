@@ -1,0 +1,13 @@
+{% load static %}
+<li>
+    <article class="post">
+        {% comment %} <a href="{{ post.get_absolute_url }}"> {% endcomment %}
+        <a href="{% url "project-detail-page" project.slug %}">
+            <img src="{% static "projects/images/"|add:project.image_name %}" alt="{{project.title}}" />
+            <div class="post_content">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.excerpt }}</p>
+            </div>
+        </a>
+    </article>
+</li>

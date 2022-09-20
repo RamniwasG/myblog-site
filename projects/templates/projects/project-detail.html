@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   {{ project.title }}
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "projects/project-detail.css"%}" >
+    <link rel="stylesheet" href="{% static "projects/all-projects.css"%}" >
+{% endblock %}
+
+{% block content %}
+    <section id="summary">
+        <h2>{{ project.title }}</h2>
+        {% for lang in languages %}
+            <span class="tags languages">{{ lang.language }}</span>
+        {% endfor %}
+        <br />
+        <br />
+        {% for tag in project_tags %}
+            <span class="tags app_types">{{ tag.caption }}</span>
+        {% endfor %}
+        <br />
+        <br />
+        {% for tech in technologies %}
+            <span class="tags technologies">{{ tech.technology }}</span>
+        {% endfor %}
+        <article>
+            <img src="{% static "projects/images/"|add:project.image_name %}" alt="{{project.title}}" />
+            <address>Developed By <a href="mailto:{{ project.developed_by.email_address }}" style="text-decoration:none">{{ project.developed_by }}</a></address>
+            <div>
+                Last updated on <time>{{ project.date|date:"d M y" }} </time>
+            </div>
+        </article>
+    </section>
+    <main>
+        <h3>Application Type : 
+            {% for tag in project_tags %}
+                <span class="text">{{ tag.caption }} ,</span>
+            {% endfor %}
+        </h3>
+        <h3>Language Used : 
+            {% for lang in languages %}
+                <span class="text">{{ lang.language }} ,</span>
+            {% endfor %}
+        </h3>
+        <h3>Technology Used : 
+            {% for tech in technologies %}
+                <span class="text">{{ tech.technology }} ,</span>
+            {% endfor %}
+        </h3>
+        <h3>Description: </h3>
+        {{ project.description|linebreaks }}
+        <section id="full-image">
+            <img src="{% static "projects/images/"|add:project.image_name %}" alt="{{project.title}}" />
+        </section>
+        <h3>Employer : {{ project.employer}}</h3>
+    </main>
+{% endblock %}

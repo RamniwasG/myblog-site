@@ -47,3 +47,12 @@ h3 {
 #main-navigation h1 a:active {
   color: white;
 }
+
+#navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+#navigation h3 {
+  margin-right: 1rem;
+}
