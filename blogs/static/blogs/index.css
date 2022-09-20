@@ -61,25 +61,33 @@
     border-radius: 50%;
   }
   
-  #about {
+  #about, #contact {
     text-align: center;
     padding: 3rem;
     background-color: #4c3939;
     margin-top: 0rem;
     color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  #contact {
+    text-align: center;
+    background-color: #474c39;
+    margin-top: 0rem;
+    color: #fff;
   }
   
-  #about h2 {
+  #about, #contact h2 {
     font-size: 3rem;
     color: #fff;
   }
 
-  #about h3 {
+  #about, #contact h3 {
     font-size: 2rem;
     color: #fff;
   }
   
-  #about p {
+  #about, #contact p {
     font-size: 1.5rem;
     color: #353535;
     color: #fff;
