@@ -21,19 +21,33 @@
     </section>
 
     <section id="latest-posts">
-        <h2>My latest thought</h2>
+        <h2>My Latest Thought</h2>
         <ul>
             {% for post in posts %}
                 {% include "blogs/includes/post.html" %}
             {% endfor %}
         </ul>
         <br/>
-        <p>Hi, I am Ramniwas and I love to blog about tech and world</p>
+        <h2>Hi, I am Ramniwas and I love to blog about tech and world</h2>
+    </section>
+
+    <section id="latest-posts" style="margin-top:0px">
+        <h2>My Latest Projects</h2>
+        <ul>
+            {% for project in projects %}
+                {% include "blogs/includes/project.html" %}
+            {% endfor %}
+        </ul>
+        <br/>
+        <h2>I'm a professional software developer and I am passionate to build technology</h2>
     </section>
     <section id="about">
         <h2>What I Do</h2>
         <p>I love computer programming and app development.</p>
-        <p>My goal to learn and use it to build something that helps a mankind to make there lify easy and provide all the information I have to the world!</p>
+        <p>My goal is to learn and use technology to build something 
+            that helps a mankind to make there lify easy and also 
+            provide all the information I have to the world!
+        </p>
 
         <h3>Contact</h3>
         <p>+91 8686340975</p>

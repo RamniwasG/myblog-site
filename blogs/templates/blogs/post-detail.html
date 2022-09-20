@@ -26,5 +26,8 @@
     </section>
     <main>
         {{ post.content|linebreaks }}
+        <section style="text-align:center">
+            <img src="{% static "blogs/images/"|add:post.image_name %}" alt="{{post.title}}" style="width: 50rem; height: 30rem" />
+        </section>
     </main>
 {% endblock %}

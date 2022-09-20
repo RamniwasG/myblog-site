@@ -44,6 +44,20 @@ body {
     margin-bottom: 1rem;
   }
   
+  #full-image img {
+    text-align: center;
+    width: 100%;
+    max-width: 40rem;
+    height: 100%;
+    border-radius: 12px;
+    border: 5px solid white;
+    margin-bottom: 1rem;
+  }
+
+  #full-image img {
+    max-width: 40rem;
+  }
+
   #summary address {
     font-weight: bold;
   }
