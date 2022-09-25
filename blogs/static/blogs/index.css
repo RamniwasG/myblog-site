@@ -61,7 +61,7 @@
     border-radius: 50%;
   }
   
-  #about, #contact {
+  #about {
     text-align: center;
     padding: 3rem;
     background-color: #4c3939;
@@ -69,25 +69,18 @@
     color: #fff;
     margin-bottom: 1rem;
   }
-
-  #contact {
-    text-align: center;
-    background-color: #474c39;
-    margin-top: 0rem;
-    color: #fff;
-  }
   
-  #about, #contact h2 {
+  #about h2 {
     font-size: 3rem;
     color: #fff;
   }
 
-  #about, #contact h3 {
+  #about h3 {
     font-size: 2rem;
     color: #fff;
   }
   
-  #about, #contact p {
+  #about p {
     font-size: 1.5rem;
     color: #353535;
     color: #fff;
