@@ -3,15 +3,15 @@ from projects.models import Projects
 from .models import Post
 
 def staring_page(request):
-    latest_posts = Post.objects.all().order_by('date')[:3]
-    latest_projects = Projects.objects.all().order_by('date')[:3]
+    latest_posts = Post.objects.all().order_by('-id')[:3]
+    latest_projects = Projects.objects.all().order_by('-id')[:3]
     return render(request, 'blogs/index.html', {
         "posts": latest_posts,
         "projects": latest_projects
     })
 
 def all_posts(request):
-    latest_posts = Post.objects.all().order_by('-date')
+    latest_posts = Post.objects.all().order_by('-id')
     return render(request, 'blogs/all-posts.html', {
         "posts": latest_posts
     })

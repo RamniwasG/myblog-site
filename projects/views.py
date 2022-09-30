@@ -2,11 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from .models import Projects
 
-def getdate(post):
-    return post['date']
-
 def all_projects(request):
-    latest_projects = Projects.objects.all().order_by('-date')
+    latest_projects = Projects.objects.all().order_by('-id')
     return render(request, 'projects/all-projects.html', {
         "projects": latest_projects
     })
