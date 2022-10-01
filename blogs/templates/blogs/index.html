@@ -22,22 +22,26 @@
 
     <section id="latest-posts">
         <h2>My Latest Thought</h2>
-        <ul>
-            {% for post in posts %}
-                {% include "blogs/includes/post.html" %}
-            {% endfor %}
-        </ul>
+        <div class="post-lists">
+            <ul>
+                {% for post in posts %}
+                    {% include "blogs/includes/post.html" %}
+                {% endfor %}
+            </ul>
+        </div
         <br/>
         <h2>Hi, I am Ramniwas and I love to develop Apps.</h2>
     </section>
 
     <section id="latest-posts" style="margin-top:0px">
         <h2>My Latest Projects</h2>
-        <ul>
-            {% for project in projects %}
-                {% include "blogs/includes/project.html" %}
-            {% endfor %}
-        </ul>
+        <div class="post-lists">
+            <ul>
+                {% for project in projects %}
+                    {% include "blogs/includes/project.html" %}
+                {% endfor %}
+            </ul>
+        </div
         <br/>
         <h2>I'm a professional software developer and I am passionate to build web + mobile applications</h2>
     </section>

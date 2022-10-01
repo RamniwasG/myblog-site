@@ -22,11 +22,13 @@
 
     <section id="latest-posts">
         <h2>My latest thought</h2>
-        <ul>
-            {% for post in posts %}
-                {% include "blogs/includes/post.html" %}
-            {% endfor %}
-        </ul>
+        <div class="post-lists">
+            <ul>
+                {% for post in posts %}
+                    {% include "blogs/includes/post.html" %}
+                {% endfor %}
+            </ul>
+        </div
         <br/>
         <p>Hi, I am Ramniwas and I love to blog about tech and world</p>
     </section>
