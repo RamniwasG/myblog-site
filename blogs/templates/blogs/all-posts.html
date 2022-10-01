@@ -13,12 +13,10 @@
 {% block content %}
     <section id="all-posts">
         <h2>All Collected Posts</h2>
-        <div class="post-lists">
-            <ul>
-                {% for post in posts %}
-                    {% include "blogs/includes/post.html" %}
-                {% endfor %}
-            </ul>
-        </div>
+        <ul>
+            {% for post in posts %}
+                {% include "blogs/includes/post.html" %}
+            {% endfor %}
+        </ul>
     </section>
 {% endblock %}
